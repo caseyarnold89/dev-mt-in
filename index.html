@@ -38,11 +38,11 @@
   <div class="l-container">
     <h2>Friends</h2>
 
-    <button class="l-btn l-btn-main">Go</button>
+    <button class="l-btn l-btn-main" ng-click="findFriend(findFriend.name)">Go</button>
     <input type="text" placeholder="Find Friends" ng-model="findFriend.name">
     <select ng-model="sortReverse" ng-options="option.value as option.display for option in sortOptions"></select>    
     <div class="friendList" ng-repeat="friend in myProfile.friends | filter : findFriend.name | orderBy : 'name' : sortReverse">
-      <span class="closeBtn"></span>
+      <span class="closeBtn" ng-click="removeFriend(friendId)"></span>
         {{friend.name}}
       <br />
       <div class="secondConnection friendList">
@@ -60,7 +60,7 @@
 				</div>
 					<br />
 				<div class="friendList">
-					<span class="friend"></span> Potential Friends
+					<span class="friend" ng-repeat="friend in potentialFriends">{{friend.name}} <button ng-click='addFriend(friend._id)'>Add Friend</button></span> Potential Friends
 				</div>
 			</div>
 		</div>
@@ -69,7 +69,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   	<script src="app.js"></script> 
     <script src="homeCtrl.js"></script>
-    <script src="profileService.js"></script>
+    <script src="profileService2.js"></script>
+    <script src="friendService.js"></script>
 </body>
 
 </html>
