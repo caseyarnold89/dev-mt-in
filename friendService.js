@@ -6,7 +6,7 @@ app.service('friendService',function($http, $q) {
     this.findFriends = function(userId, query) {
         return $http({
             method: 'GET',
-            url: baseUrl + '/api/friends/' + userId + '?name=' + query
+            url: baseUrl + 'api/friends/' + userId + '?name=' + query
         })
     };
     

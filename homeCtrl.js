@@ -21,40 +21,6 @@ app.controller('homeCtrl', function($scope, profileService2, friendService) {
           
           $scope.checkForProfile();
             
-    
-	//    $scope.checkForProfile = function() {
-    //         var profileId = JSON.parse(localStorage.getItem('profileId'));
-
-    //         if (profileId) {
-    //             profileService.checkForProfile(profileId.profileId)
-    //             .then(function(profile) {
-    //                 $scope.myProfile = profile.data;
-    //                 friendService.findFriendsFriends(profile.data); // Finding second level friends.
-    //             })
-    //             .catch(function(err) {
-    //                 console.error(err);
-    //             });
-    //         }
-    //     }
-        // $scope.checkForProfile = function() {
-        //     var profileId = JSON.parse(localStorage.getItem('profileId'));
-
-        //     if (profileId) {
-        //         profileService.checkForProfile(profileId.profileId)
-        //         .then(function(profile) {
-        //             $scope.myProfile = profile.data;
-        //             friendService.findFriendsFriends(profile.data);
-        //         })
-        //         .catch(function(err) {
-        //             console.error(err);
-        //         });
-        //     }
-        // }
-        
-    //     $scope.checkForProfile = profileService.checkForProfile;
-        
-       
-    //    $scope.checkForProfile();
 	      
        $scope.sortOptions = [
            {
@@ -85,18 +51,9 @@ app.controller('homeCtrl', function($scope, profileService2, friendService) {
                console.error(err);
            });
         
-        
-        
-        //    .then(function(deletedProfile) {
-        //        localStorage.removeItem('profileId');
-        //        $scope.myProfile = {};
-        //    })
-        //    .catch(function(err){
-        //      console.error(err);  
-        //    });
        };
        
-       $scope.findFriend = function(query) {
+       $scope.findFriends = function(query) {
            friendService.findFriends($scope.myProfile._id, query)
            .then(function(response) {
                $scope.potentialFriends = response;

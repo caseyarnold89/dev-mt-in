@@ -38,7 +38,7 @@
   <div class="l-container">
     <h2>Friends</h2>
 
-    <button class="l-btn l-btn-main" ng-click="findFriend(findFriend.name)">Go</button>
+    <button class="l-btn l-btn-main" ng-click="findFriends(findFriend.name)">Go</button>
     <input type="text" placeholder="Find Friends" ng-model="findFriend.name">
     <select ng-model="sortReverse" ng-options="option.value as option.display for option in sortOptions"></select>    
     <div class="friendList" ng-repeat="friend in myProfile.friends | filter : findFriend.name | orderBy : 'name' : sortReverse">

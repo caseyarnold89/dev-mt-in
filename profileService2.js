@@ -2,7 +2,7 @@ var app = angular.module('devMtIn');
 
 app.service('profileService2', function($http){
     
-    var baseUrl = 'http://connections.devmounta.in/';
+    var baseUrl = 'http://connections.devmounta.in';
     
     this.saveProfile = function(profile) {
         // localStorage.setItem('profile', JSON.stringify(profile));
