@@ -9,7 +9,7 @@ app.service('profileService2', function($http){
         
         return $http({
             method: 'POST',
-            url: baseUrl + 'api/profiles/',
+            url: baseUrl + '/api/profiles/',
             data: profile
         })
         .then(function(profileResponse){
@@ -45,7 +45,7 @@ app.service('profileService2', function($http){
         
         return $http({
             method: 'DELETE',
-            url: baseUrl + 'api/profiles/' + profileId
+            url: baseUrl + '/api/profiles/' + profileId
         });
         
     };

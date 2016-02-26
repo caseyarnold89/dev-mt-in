@@ -2,24 +2,22 @@ var app = angular.module('devMtIn');
 
 app.controller('homeCtrl', function($scope, profileService2, friendService) {
     
-    //    $scope.myProfile = profileService2.checkForProfile();
-    
-          $scope.checkForProfile = function() {
-                var profileId = JSON.parse(localStorage.getItem('profileId'));
+    $scope.checkForProfile = function() {
+            var profileId = JSON.parse(localStorage.getItem('profileId'));
 
-                if (profileId) {
-                    profileService2.checkForProfile(profileId.profileId)
-                    .then(function(profile) {
-                        $scope.myProfile = profile.data;
-                        console.log($scope.myProfile);
-                    })
-                    .catch(function(err) {
-                        console.error(err);
-                    });
-          	    }
-          };
-          
-          $scope.checkForProfile();
+            if (profileId) {
+                profileService2.checkForProfile(profileId.profileId)
+                .then(function(profile) {
+                    $scope.myProfile = profile.data;
+                    console.log($scope.myProfile);
+                })
+                .catch(function(err) {
+                    console.error(err);
+                });
+            }
+        };
+        
+        $scope.checkForProfile();
             
 	      
        $scope.sortOptions = [
@@ -55,7 +53,8 @@ app.controller('homeCtrl', function($scope, profileService2, friendService) {
        
        $scope.findFriends = function(query) {
            friendService.findFriends($scope.myProfile._id, query)
-           .then(function(response) {
+           .then(function(response){
+               
                $scope.potentialFriends = response;
            })
        };
