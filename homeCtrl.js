@@ -53,9 +53,9 @@ app.controller('homeCtrl', function($scope, profileService2, friendService) {
        
        $scope.findFriends = function(query) {
            friendService.findFriends($scope.myProfile._id, query)
-           .then(function(response){
-               
+           .then(function(response){               
                $scope.potentialFriends = response;
+               console.log($scope.potentialFriends)
            })
        };
        

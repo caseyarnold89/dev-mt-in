@@ -13,7 +13,7 @@
 	<div class="l-header">
 		<h1>{{myProfile.name || "Your Name"}}</h1>
 	</div>
-  
+    
   <div class="wrapper">  
     <div>
       <h2>Profile</h2>
@@ -45,7 +45,7 @@
       <span class="closeBtn" ng-click="removeFriend(friendId)"></span>
         {{friend.name}}
       <br />
-      <div class="secondConnection friendList">
+      <div class="secondConnection friendList" ng-repeat="friend in potentialFriends">
         My Second Connections
       </div>
     </div>
@@ -60,11 +60,13 @@
 				</div>
 					<br />
 				<div class="friendList">
-					<span class="friend" ng-repeat="friend in potentialFriends">{{friend.name}} <button ng-click='addFriend(friend._id)'>Add Friend</button></span> Potential Friends
+                    Potential Friends </br>
+					<span class="friend" ng-repeat="pFriend in potentialFriends">{{pFriend.name}}<button ng-click='addFriend(friend._id)'>Add Friend</button></br></span>
 				</div>
 			</div>
 		</div>
 	</div>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   	<script src="app.js"></script> 
